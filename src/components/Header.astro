@@ -18,10 +18,11 @@ const { main }: { main: NavigationLink[] } = menu;
 <header class="bg-zinc-50 dark:bg-zinc-900">
   <div class="mx-auto max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
     <div class="flex items-start justify-between gap-2 sm:gap-4 md:items-center">
+      <div class="block dark:hidden">
       <a href="/" class="logo flex items-center" aria-current="page">
         <figure>
           <Image
-            src={config.site.logo}
+            src={config.site.logoDark}
             alt={config.site.title}
             class="w-24 rounded bg-zinc-950 bg-opacity-0"
             width={500}
@@ -31,6 +32,22 @@ const { main }: { main: NavigationLink[] } = menu;
           />
         </figure>
       </a>
+    </div>
+    <div class="hidden dark:block">
+      <a href="/" class="logo flex items-center" aria-current="page">
+        <figure>
+          <Image
+            src={config.site.logoLigth}
+            alt={config.site.title}
+            class="w-24 rounded bg-zinc-950 bg-opacity-0"
+            width={500}
+            height={200}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </a>
+    </div>
       <div class="relative order-3 flex">
         <!-- navbar toggler -->
         <input id="nav-toggle" type="checkbox" class="hidden" />
