@@ -1,23 +1,34 @@
 ---
+import social from "@config/social";
 import config from "@config/config.json";
-import HeartIcon from "@components/icons/HeartIcon.astro";
 const year = new Date().getFullYear();
+const socialItems = social.networks;
 ---
 
 <footer class="mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8">
   <div class="border-t border-zinc-100 dark:border-zinc-900">
+    <div class="flex space-x-5 pt-8 m-auto justify-center items-center">
+      {
+        socialItems?.map((item) => (
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <figure>
+              <Fragment set:html={item.svg} />
+            </figure>
+          </a>
+        ))
+      }
+    </div>
     <p class="text-center text-xs/relaxed text-zinc-500 dark:text-zinc-400 mt-8 mb-8">
-      &copy; {year}. {config.site.title} - EV0. All rights REVERSED
+      &copy; {year}. {config.site.title} - All content is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
       <span class="block mt-2">
-        Made with
-        <HeartIcon />
-        in Medellín, Colombia. by
+        This website is based on the
         <a
           href="https://gndx.dev"
           class="text-zinc-700 decoration-dashed transition hover:text-zinc-700/75 dark:text-zinc-200 dark:hover:text-zinc-200/75"
-          >GNDX</a
-        >
+          >GNDX</a> template.
       </span>
     </p>
   </div>
 </footer>
+
+
