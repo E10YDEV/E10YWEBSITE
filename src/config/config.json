@@ -19,8 +19,8 @@
     "meta_description": "EV0 is a free and open-source serverless blog template, built with Astro, Tailwind CSS, and TypeScript."
   },
   "author": {
-    "name": "Oscar Barajas Tavares @gndx",
+    "name": "[E10Y]",
     "avatar": "https://s3.amazonaws.com/gndx.dev/gndx-astro-avatar.png",
-    "bio": "EV0 is a free and open-source serverless blog template, built with Astro, Tailwind CSS, and TypeScript."
+    "bio": "E10Y es un espacio donde comparto conocimientos a través de mi blog y mis proyectos relacionados con la programación."
   }
 }

@@ -5,12 +5,12 @@
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "Sobre mí",
       "url": "/about"
     },
     {
-      "name": "Tags",
-      "url": "/tags"
+      "name": "Blog",
+      "url": "/blog"
     },
     {
       "name": "Categories",
