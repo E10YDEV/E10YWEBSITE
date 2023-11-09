@@ -1,11 +1,11 @@
 ---
-title: 'Creando una extensión de navegador para Mozilla'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jul 08 2022'
+title: 'Creando una extensión de navegador ,conceptos y arquitectura'
+description: 'Pequeña sobre Web Extensión y su arquitectura'
+pubDate: 'Nov 08 2023'
 heroImage: '/WebExt_Diagram.png'
-categories: ['first']
-authors: ['gndx']
-tags: ['science', 'technology']
+categories: ['javascript']
+authors: ['E10Y']
+tags: ['navegador', 'guia']
 ---
 Hace unos días, usando comandos XPath en la terminal del navegador, me pregunté si había alguna forma de comprobar los resultados de una manera más visual. Buscando un poco, encontré varias alternativas muy útiles que cumplían su función. Entonces, me planteé: ¿por qué usar una extensión escrita por otro desarrollador si puedo hacerla yo mismo? Sin experiencia ni conocimientos previos, me puse manos a la obra, y este post es el resultado.
 
