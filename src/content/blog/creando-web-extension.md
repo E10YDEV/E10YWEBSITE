@@ -1,29 +1,29 @@
 ---
-title: 'Creando una extensión de navegador ,conceptos y arquitectura'
-description: 'Pequeña sobre Web Extensión y su arquitectura'
+title: 'Creando una extensión de navegador'
+description: 'Pequeña guía sobre conceptos y arquitectura de una Web Extension'
 pubDate: 'Nov 08 2023'
 heroImage: '/WebExt_Diagram.png'
 categories: ['javascript']
 authors: ['E10Y']
 tags: ['navegador', 'guia']
 ---
-Hace unos días, usando comandos XPath en la terminal del navegador, me pregunté si había alguna forma de comprobar los resultados de una manera más visual. Buscando un poco, encontré varias alternativas muy útiles que cumplían su función. Entonces, me planteé: ¿por qué usar una extensión escrita por otro desarrollador si puedo hacerla yo mismo? Sin experiencia ni conocimientos previos, me puse manos a la obra, y este post es el resultado.
+Recientemente, mientras experimentaba con comandos XPath en la terminal del navegador, me pregunté si podría mejorar la visualización de los resultados. Después de descubrir alternativas útiles, decidí desarrollar mi propia extensión en lugar de depender de las creadas por otros desarrolladores.Este post surge de está pequeña investigación para realizar la extensión XPathHunt.
 
-Puedes ver el código completo de la extensión en GitHub.
+Puedes ver el código completo de la extensión en GitHub [XpathHunt GitHub](https://github.com/E10YDEV/XpathHunt).
 
-Para probar la extensión desde la tienda de Mozilla, visita [el enlace correspondiente](https://example-link.com/).
+Para probar la extensión desde la tienda de Mozilla [XpathHunt MDN Addons](https://addons.mozilla.org/es/firefox/addon/xpathhunt/).
 
 Esta guía proporciona una visión general de cómo desarrollar una extensión (en este ejemplo mi extensión XpathHunt que resalta expresiones Xpath en pantalla). **No pretende ser una guía paso a paso al uso si no unos conceptos básicos para falicitar tu inicio en el desarrollo de extensiones.**
 
-Te recomiendo para entender la guia correctamente que lo leas a la vez que abres los archivos del respositorio. Al final del artículo, te dejaré una lista de la documentación consultada para obtener más información.
-
 ## Arquitectura básica de una extensión
 
-Antes de comenzar, es importante dedicar unos minutos a comprender que partes conforman una extensión y cómo se comunican las diferentes partes entre sí ya que no todas pueden acceder al contenido de las páginas web, a la API del navegador. Esto te ahorrará muchos problemas en el futuro.
+Antes de comenzar, es importante dedicar unos minutos a comprender que partes conforman una extensión y cómo se comunican las diferentes partes entre sí.
 
 ### 1. Partes de la extensión
 
 He diseñado un pequeño diagrama para que se entienda la separación de componentes y flujo de información.
+
+![Web Extension Diagram](/WebExt_Diagram.png)
 
 - **Manifest:** Es un archivo JSON y es la base de tu extensión, aporta al navegador la información necesaria para que gestione todos los archivos de tu extensión. Existen tres versiones, siendo la V2 la más común, pero en el ejemplo de esta entrada, usaremos la V3.
 - **Content Script:** Es el script que se inyectará en la página donde se ejecuta la extensión. Se ejecuta en el contexto de la web visitada, por lo tanto **solo tiene acceso al DOM de esta** y  limitaciones en uso de las API del navegador .Este script es el encargado de analizar la web, responder o escuchar al background script.
@@ -33,7 +33,7 @@ He diseñado un pequeño diagrama para que se entienda la separación de compone
 
 ### 2. Flujo de comunicación dentro de la extensión
 
-Para poder enviar información entre dos partes de la extensión existen varias API que nos lo permiten veamos un ejemplo con `runtime.sendMessage()` y con su “listener”.
+Para poder enviar información entre dos partes de la extensión existen varias APIs, veamos un ejemplo con `runtime.sendMessage()` y con su listener.
 
 ```jsx
 // Sintaxis del runtime.sendMessage //
@@ -60,16 +60,15 @@ La comunicación de forma simplificada tendrá esta estructura:
 
 Content Script 🔄 Background Script 🔄 Extension Script
 
-
 ## Debugging
 
 Para probar la extensión durante el desarrollo es tan sencillo como ir a [about:debugging#/runtime/this-firefox]([about:debugging#/runtime/this-firefox]) y cargar el manifest de nuestra extensión.
 
-Es importante recordar que no todos los scripts tienen acceso al DOM de tu navegador por lo tanto no podrás visualizar los errores con un `console.log()` o `console.error()` ni ver si algo esta fallando. Para debugear un Background script en la misma página donde cargargas tu extensión aparecera un boton llamada “Inspect” el cual abrira una consola que tiene acceso a este script.
+Es importante recordar que no todos los scripts tienen acceso al DOM de tu navegador por lo tanto no podrás visualizar los errores con un `console.log()` o `console.error()`. Para debugear un Background script en la misma página donde cargargas tu extensión aparecera un boton llamada “Inspect” el cual abrira una consola que tiene acceso a este script.
 
 ## Creando la extensión
 
-Para este ejemplo, vamos a inyectar un iframe en la parte superior de la web. Sin embargo, existen alternativas como Pop-Up, SideBar, etc., que son incluso más fáciles de implementar, solo con declararlas en el Manifest, tendríamos el trabajo hecho. A continuación, mostraremos una estructura de archivos para nuestra extensión:
+Para este ejemplo, vamos a inyectar un iframe en la parte superior de la web. Sin embargo, existen alternativas como Pop-Up, SideBar, etc., que son incluso más fáciles de implementar, solo con declararlas en el Manifest, tendríamos el trabajo hecho. Aquí os dejo la estructura de archivos para nuestra extensión:
 
 ```
 /
@@ -148,7 +147,7 @@ Este es el primer archivo que debemos generar, veamos un ejemplo de nuestra exte
 
 ```
 
-En este archivo, declaramos todos los archivos y características de nuestra extensión.
+En este JSON, declaramos todos los archivos y características de nuestra extensión.
 
 - **Permissions**: Estos son los permisos necesarios para que nuestra extensión funcione. Puedes consultar la lista completa de permisos en la [documentación de MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions).
 - **ID**: Si no asignas un ID a la extensión, se generará uno temporal durante el proceso de depuración. Sin embargo, si planeas subirla a una tienda o firmarla, deberás generar un ID único. En este ejemplo, he utilizado mi correo electrónico.
@@ -202,7 +201,7 @@ document.body.appendChild(iframe);
 
 ### 2.2 Localización del resultado de la búsqueda XPath
 
-Esta parte no es relevante, solo explica cómo funciona el sistema de evaluación de mi extensión.
+Esta parte no es especialmente relevante, solo explica cómo funciona el sistema de evaluación de mi extensión.
 
 El siguiente fragmento de código es el motor o función principal de búsqueda de expresiones XPath. Sin entrar en muchos detalles sobre su funcionamiento, podemos resumir su funcionamiento de la siguiente manera:
 
@@ -247,7 +246,7 @@ function xpathFinder(xpath) {
 
 Como he adelantado al principio de la entrada para el envio y escucha de los eventos usaremos las APIs `runtime.sendMessage()` y `onMessage.addListener()` para poder enviar los resultados de la busqueda a nuestros scripts de la extensión, mediante el Background Script como intermediario.
 
-Es muy recomendable gestionar el envio y escucha de eventos usar objetos literales con un campo que determina la acción que quieres realizar ya que`onMessage.addListener()` escuchará todos lo eventos de tipo sendMessage. Para ello le pasamos una funcion al listener que se encarge de gestionar el mensaje.
+Es muy recomendable gestionar el envio y escucha de eventos usar objetos literales con un campo que determina la acción que quieres realizar ya que `onMessage.addListener()` escuchará todos lo eventos de tipo sendMessage. Para ello le pasamos una funcion al listener que se encarge de gestionar el mensaje.
 
 ```jsx
 //Ejemplo de SendMessage // 
@@ -271,7 +270,7 @@ function handleActions(message) {
 }
 ```
 
-Dentro de el `handleAction()` iremos definiendo o asignando las funciones que necesitemos según el mensaje recibido por ejemplo si recibimos un “message” con la `“action”:"xpathUpdate”` llamaremos a la función (previamente detallada) `xpathFinder(message.value)` para realizar una búqueda.
+Dentro de el `handleAction()` iremos definiendo o asignando las funciones que necesitemos según el mensaje recibido por ejemplo si recibimos un “message” con la `“action”:"xpathUpdate”` llamaremos a la función (previamente detallada) `xpathFinder(message.value)` para realizar una búsqueda.
 
 ### 2. Background Script
 
@@ -303,7 +302,6 @@ Ya tenemos todo el motor listo para funcionar, solo nos quedaría crear un HTML 
 
 Recuerda antes de asignar o invocar la interfaz ya sea el src del Iframe o un Pop-Up etc haberla declarado correctamente en el manifest.
 
-
 ## Finalización y aclaraciones
 
 Para publicar una extensión es tan sencillo como comprimir tus archivos en un ZIP y subirlo a la store de Mozilla donde pasará un proceso de revisión manual que es bastante intuitivo, para la firma de la extensión el proceso es bastante similar y la web de MDN te indica paso a paso como realizar el proceso.
@@ -316,9 +314,9 @@ Si ves algún error en la extensión o en las explicaciones dadas en este artíc
 
 #### Fuentes y links de interés:
 
-* Documentación general Web Extensions: [https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions){:target="_blank"}
+* Documentación general Web Extensions: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
 * Documentación Manifest: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json
 * Ejemplos de extensiones: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Examples
 * Mini guía general de Web Extensión: https://medium.com/@TusharKanjariya/getting-started-with-developing-browser-extensions-eb4a7d8658b3
-* Repositorio de XpathHunt:
-* XpathHunt en la store:
+* Repositorio de XpathHunt: https://github.com/E10YDEV/XpathHunt
+* XpathHunt en la store: https://addons.mozilla.org/es/firefox/addon/xpathhunt/

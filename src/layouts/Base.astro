@@ -102,6 +102,7 @@ const ogImage = createOgImage({
   </head>
   <body class="bg-white dark:bg-zinc-900/95">
     <Header />
+    <slot name="hero2"/>
     {!blogpost && <Hero />}
     <main class="mx-auto max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <slot />

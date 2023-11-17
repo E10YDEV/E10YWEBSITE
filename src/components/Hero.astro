@@ -1,61 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import config from "@config/config.json";
-import social from "@config/social";
 
-const socialItems = social.networks;
 ---
-<section class="bg-zinc-50 dark:bg-zinc-900 flex justify-center items-center h-1/4">
-  <div class="mx-auto max-w-screen-lg px-4 py-6 sm:px-6 lg:px-8 text-center relative">
-    <div class="mb-8">
-      <figure class="relative">
-        <Image
-          class="rounded-lg w-60 md:w-60 mx-auto"
-          width={512}
-          height={512}
-          src={"/LogoDark1.png"}
-          alt={config.author.name}
-          decoding="async"
-          loading="lazy"
-        />
-        <!-- Texto con animación de crecimiento y reducción personalizada -->
-        <div class="absolute top-12 right-7  font-bold transform -rotate-[20deg]   bg-yellow-500 p-2 rounded-md shadow-md cursor-pointer transition-transform transform-growth" id="changingTextContainer">
-          <p class=" dark:text-gray-800 text-gray-800 text-sm font-bold" id="changingText">Message Not Found</p>
-        </div>
-      </figure>
-      <p class="mt-4 text-lg text-zinc-500 dark:text-zinc-400">
-        {"[Portfolio y Blog de Eloy Martinez]"}
-      </p>
-    </div>
-  </div>
-</section>
 
-<style>
-  .transform-growth:hover {
-    transform: scale(1.1);
-  }
-</style>
 
-<script is:inline>
-  const changingText = document.getElementById('changingText');
-  const changingTextContainer = document.getElementById('changingTextContainer');
-  const words = ["Hello World", "404 Not Found", "Undefined", "Now Free", "Beta 1.0", "Console.log()","Loading...","License Expired","Realistic Elephant"];
-  let previousIndex = -1;
 
-  changingTextContainer.addEventListener('click', () => {
-    changingTextContainer.classList.add('animate-ping');
-    setTimeout(() => {
-      let randomIndex;
-      do {
-        randomIndex = Math.floor(Math.random() * words.length);
-      } while (randomIndex === previousIndex);
-      previousIndex = randomIndex;
-
-      changingText.textContent = words[randomIndex];
-      changingTextContainer.classList.remove('animate-ping');
-    }, 500);
-  });
-</script>
 
 
 

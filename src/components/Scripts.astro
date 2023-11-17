@@ -1,0 +1,36 @@
+<div class="absolute top-12 right-7  font-bold transform -rotate-[20deg]   bg-yellow-500 p-2 rounded-md shadow-md cursor-pointer transition-transform transform-growth" id="changingTextContainer">
+    <p class=" dark:text-gray-800 text-gray-800 text-sm font-bold" id="changingText">Message Not Found</p>
+  </div>
+
+  <script is:inline>
+
+    document.getElementById('changingTextContainer').addEventListener('click', () => {
+        let words = ["Hello World", "404 Not Found", "Undefined", "Now Free", "Beta 1.0", "Console.log()","Loading...","License Expired","Realistic Elephant"];
+        let previousIndex = -1;
+        let changingText = document.getElementById('changingText');
+        let changingTextContainer = document.getElementById('changingTextContainer')
+      changingTextContainer.classList.add('animate-ping');
+      setTimeout(() => {
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * words.length);
+        } while (randomIndex === previousIndex);
+        previousIndex = randomIndex;
+  
+        changingText.textContent = words[randomIndex];
+        changingTextContainer.classList.remove('animate-ping');
+      }, 500);
+    });
+
+  </script>
+
+  <style is:inline>
+    #changingText{
+  animation: pulse 0.9s linear infinite;
+}
+@keyframes pulse{
+  25%  {transform: scale(1);}
+  75%  {transform: scale(1.04);}
+}
+  </style>
+  
