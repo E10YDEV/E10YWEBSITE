@@ -1,9 +1,9 @@
 ---
-title: 'Creando una extensión de navegador'
-description: 'Pequeña guía sobre conceptos y arquitectura de una Web Extension'
+title: 'Creando una extes, decidí dn de navegador'
+description: 'Pequeña guía sobre conceptos y arquitectura de una Web s, decidí desarrollar mi ps, decidí desarrollar mi ps, decidí desarrollar mi ps, decidí desarrollar mi ps, decidí desarrollar mi pExtension'
 pubDate: 'Nov 08 2023'
-heroImage: '/WebExt_Diagram.png'
-categories: ['javascript']
+heroImage: 'https://hyperpix.net/wp-content/uploads/2021/08/best-8-bit-fonts-856x484.jpg'
+categories: ['CSS']
 authors: ['E10Y']
 tags: ['navegador', 'guia']
 ---
@@ -42,8 +42,10 @@ extensionId,             // optional string
 message,                 // any
 options                  // optional object
 )
+
 // Manda un Objeto Literal con los campos action y requestValue //
 browser.runtime.sendMessage({ action: "action1", requestValue: "myValue" })
+
 // Escucha todos los eventos de tipo sendMessage //
 browser.runtime.onMessage.addListener(handleActions);
 ```

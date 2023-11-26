@@ -7,6 +7,8 @@ import config from "@config/config.json";
 import { createOgImage } from "@utils/createOgImage";
 
 import '@fontsource-variable/victor-mono';
+import '@fontsource/share-tech-mono';
+import '@fontsource/press-start-2p';
 import "@styles/global.css";
 
 import { ViewTransitions } from "astro:transitions";
@@ -100,15 +102,64 @@ const ogImage = createOgImage({
     <meta name="twitter:card" content="summary_large_image" />
     <ViewTransitions />
   </head>
-  <body class="bg-white dark:bg-zinc-900/95">
+  <body class="bg-white dark:bg-zinc-900">
     <Header />
     <slot name="hero2"/>
     {!blogpost && <Hero />}
     <main class="mx-auto max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      
       <slot />
     </main>
     {!blogpost && config.features.youtube && <FeaturedVideos />}
     <Footer />
+    <style is:global>
+.animate2 {
+    background-image: url(https://media.istockphoto.com/id/1463963370/video/motion-futuristic-geometric-shapes-with-neon-color-in-dark-galaxy.jpg?s=640x640&k=20&c=hZYr2eMR1du9nErLishvoy5l20MGZKEWznKdp7V9XFg=);
+    background-repeat: repeat-x;
+    animation: animated 4s linear infinite;
+    -webkit-animation: animated 4s linear infinite;
+    width: 100%;
+    max-width: 100%;
+    height: auto;  
+    margin: 0 auto;
+}
+
+@keyframes animated {
+    0%   {background-position: 0 0;}
+    100% {background-position: 100% 0;} /* Termina en el punto de inicio */
+}
+
+@-webkit-keyframes animated {
+    0%   {background-position: 0 0;}
+    100% {background-position: 100% 0;} /* Termina en el punto de inicio */
+}
+
+@keyframes ani{
+	0%{background-position: 58% 10%,0 0;}
+	100%{background-position: 58% 10%,100vw 0 ;}
+}
+.cosa, .cosa2 {
+  
+  height: 300px; /* ajusta la altura según tus necesidades */
+  opacity: 100%;
+  background:
+  /**https://w.wallhaven.cc/full/45/wallhaven-45p5j8.jpg**/
+    url(https://w.wallhaven.cc/full/45/wallhaven-45p5j8.jpg) 58% 10% /contain no-repeat,
+    url(https://i.pinimg.com/564x/fb/83/d3/fb83d3a4287fd5fd2a6678ef2b0ab3a4.jpg) repeat-x /* fondo de .cosa */
+     ; 
+  background-blend-mode: difference,normal; /* ajusta según tus necesidades */
+  animation: ani 10s linear infinite;
+}
+
+.cosa {
+  
+}
+
+/* Agrega otras reglas específicas de .cosa2 aquí si es necesario */
+
+
+
+      </style>
     <script>
       // This is a hack to get vite-plugin-pwa to generate a sw.js file.
       // Do not remove this script tag.

@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-				sans: ['Victor Mono Variable', ...defaultTheme.fontFamily.sans],
+				sans: ['"Share Tech Mono"', ...defaultTheme.fontFamily.sans],
+        heading: ['"Press Start 2P"', 'sans-serif'],
 			  },
       typography: (theme) => ({
         DEFAULT: {

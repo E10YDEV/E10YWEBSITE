@@ -11,7 +11,35 @@ const posts = (await getCollection("blog")).sort(
 
 <Base>
   <Hero2 slot="hero2"/>
-  <h2 class="text-2xl md:text-3xl font-bold mb-8">Últimos Posts</h2>
+
+<div class="relative flex mt-[-20px] py-5 items-center mb-7 ">
+  <div class="w-4 border-t-4 border-zinc-800 dark:border-zinc-200"></div>
+  <div class=""><h2 class="text-2xl md:text-3xl font-thin flex-shrink mx-4">Posts</h2></div>
+  <div class="flex-grow border-t-4 border-zinc-800 dark:border-zinc-200"></div>
+</div>
   <Posts posts={posts} />
-  <HomePagination />
+
+  <div class="relative flex mt-[20px] py-5 items-center mb-7 ">
+    <div class="w-4 border-t-4 border-zinc-800 dark:border-zinc-200"></div>
+    <div class=""><h2 class="text-2xl md:text-3xl font-thin flex-shrink mx-4">Sobre mí</h2></div>
+    <div class="flex-grow border-t-4 border-zinc-800 dark:border-zinc-200"></div>
+  </div>
+
+  <div class="flex p-4 flex-col w-full pixel-corners dark:dark-pixel-corners ">
+    <div class="flex flex-col sm:flex-row   px-1 w-full text-center sm:text-left">
+
+      <div class="flex flex-col  pr-2">
+        <h2 class="text-lg font-light">Hola soy Eloy !!</h4>
+        <p class="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed porro, mtetur adipisicing elit. Sed porro, mtetur adipisicing elit. Sed porro, mtetur adipisicing elit. Sed porro, mtetur adipisicing elit. Sed porro, mtetur adipisicing elit. Sed porro, mtetur adipisicing elit. Sed porro, mollitia soluta, dignissimos labore ab magni temporibus sequi maiores.</p>
+      </div>
+      <div class="hover:scale-105 transition-transform pixel-corners dark:dark-pixel-corners m-1 relative overflow-visible flex-shrink-0 h-[8rem] w-[10rem] aspect-1/1 self-center">
+        <image class=" absolute left-3 -top-[2.4rem] w-40 h-40 "src="/descarga (1).png"/>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+  
 </Base>

@@ -62,6 +62,8 @@
     "vite-plugin-pwa": "0.16.5"
   },
   "dependencies": {
-    "@fontsource-variable/victor-mono": "^5.0.3"
+    "@fontsource-variable/victor-mono": "^5.0.3",
+    "@fontsource/press-start-2p": "^5.0.17",
+    "@fontsource/share-tech-mono": "^5.0.8"
   }
 }

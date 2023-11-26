@@ -42,8 +42,10 @@ extensionId,             // optional string
 message,                 // any
 options                  // optional object
 )
+
 // Manda un Objeto Literal con los campos action y requestValue //
 browser.runtime.sendMessage({ action: "action1", requestValue: "myValue" })
+
 // Escucha todos los eventos de tipo sendMessage //
 browser.runtime.onMessage.addListener(handleActions);
 ```
