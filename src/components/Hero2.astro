@@ -7,8 +7,8 @@ import Scripts from '@components/Scripts.astro';
 const socialItems = social.networks;
 ---
 
-<section id="hero" class="bg-zinc-50 cosa2 cosa p-14 dark:bg-zinc-900 flex justify-center items-center">
-  <div class="mx-auto  max-w-screen-lg px-4 pt-6 pb-0 sm:px-6 lg:px-8 text-center relative">
+<section id="hero" class="bg-zinc-900  pixel-corners dark:dark-pixel-corners mb-10 flex justify-center items-center stars">
+  <div id="heroInside" class="mx-auto planet pt-24 w-full px-4  pb-0 sm:px-6 lg:px-8 text-center relative">
     <div class="mb-0">
       <figure class="relative">
         <div class="hidden dark:block">
@@ -27,7 +27,7 @@ const socialItems = social.networks;
         class="rounded-lg w-60 md:w-60 mx-auto"
         width={512}
         height={512}
-        src=/2.png
+        src=/1.png
         alt={config.author.name}
         decoding="async"
         loading="lazy"
@@ -36,11 +36,14 @@ const socialItems = social.networks;
     
 
       </figure>
-      <p class="mt-4 font-heading text-lg text-zinc-800 dark:text-zinc-200">
+      <p class="mt-4  drop-shadow-2xl font-heading text-lg text-white">
         {"[Portfolio y Blog de Eloy Martinez]"}
       </p>
+      <button class="planeta">PLANETA1</button>
+      <button class="planeta">PLANETA2</button>
     </div>
   </div>
+
 </section>
-<button id="planeta1">PLANETA1</button>
+
 <Scripts/>

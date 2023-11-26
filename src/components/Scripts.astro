@@ -1,36 +1,44 @@
 
 
   <script is:inline>
+var planetSelector = document.getElementById('heroInside');
+var planets = document.querySelectorAll('.planeta');
+var arrayPlanets = ["earth.png", "namek.png", "earth.png"];
 
-
-      document.getElementById('planeta1').addEventListener('click', function() {
-        let test = document.getElementById('hero');
-        test.style.backgroundImage = 'url(earth.png), url(stars.png)';
-      console.log(test.style.backgroundImage)
-      console.log("test")
+planets.forEach((element, index) => {
+    element.addEventListener('click', function() {
+        planetSelector.style.backgroundImage = 'url(' + arrayPlanets[index] + ')';
     });
+});
+
+
+      
 
   </script>
 
   <style is:inline>
   @keyframes ani2{
-    0%{background-position: 10% -100%;
-    background-size: 10%, auto}
-	100%{background-position: 50% 10% ;}
+    0%{
+
+    background-size: 0%}
+	100%{background-size: 20rem}
 }
 
-@keyframes ani{
-	0%{background-position: 50% 10%,50% 10%;}
-	100%{background-position: 50% 10%,40% 100% ;}
+@keyframes starsAni{
+	0%{background-position: 50% 0%;}
+	100%{background-position: 55% 200% ;}
 }
-.cosa, .cosa2 {
+
+.planet{
+  filter: grayscale(20%);
   background:
-    url(mars.png) 50% 10% / 20rem no-repeat,
-    url(stars.png) repeat
-     ; 
-  animation: ani2 8s reverse,ani 20s linear infinite 8s;
+  url(mars.png) 50% 10% / 20rem no-repeat;
+
 }
-
-
-  </style>
+.stars {
+  background:
+    url(stars.png) repeat,rgb(24, 24, 27); 
+  animation: starsAni 10s ease-in infinite alternate-reverse;
+}
+</style>
   

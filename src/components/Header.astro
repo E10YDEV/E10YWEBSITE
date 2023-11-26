@@ -88,7 +88,7 @@ const { main }: { main: NavigationLink[] } = menu;
         {
           main?.map((menu) => (
             <li class="hover:underline underline-offset-8 decoration-4  text-md block rounded-lg px-2 py-2 text-zinc-500 transition-all hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200">
-              <a href={menu?.url} class="relative flex items-center">
+              <a href={menu?.url} class="relative flex  items-center">
                 {menu?.name === 'Home' ? <HomeIcon /> : menu?.name}
               </a>
             </li>
