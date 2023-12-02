@@ -1,44 +1,34 @@
 
 
   <script is:inline>
-var planetSelector = document.getElementById('heroInside');
-var planets = document.querySelectorAll('.planeta');
-var arrayPlanets = ["earth.png", "namek.png", "earth.png"];
+var planetImage = document.getElementById("heroInside");
+var planetLeft = document.querySelector('.planetLeft');
+var planetRight = document.querySelector('.planetRight');
+var arrayPlanets = ["mars.png", "namek.png", "earth.png"];
+var index = 0;
 
-planets.forEach((element, index) => {
-    element.addEventListener('click', function() {
-        planetSelector.style.backgroundImage = 'url(' + arrayPlanets[index] + ')';
-    });
+function performOperations(direction) {
+  index = (index + direction + arrayPlanets.length) % arrayPlanets.length;
+
+  if (planetImage.classList.contains("animate")) {
+    planetImage.classList.remove("animate");
+  }
+  setTimeout(() => {
+    planetImage.classList.add("animate");
+  }, 10);
+  setTimeout(() => {
+    planetImage.style.backgroundImage = 'url(' + arrayPlanets[index] + ')';
+  }, 1000);
+}
+  planetImage.addEventListener('animationend', function () {
+  planetImage.classList.remove("animate");
 });
+  planetLeft.addEventListener('click', function () {
+  performOperations(-1);
+});
+  planetRight.addEventListener('click', function () {
+  performOperations(1);
+});
+</script>
 
-
-      
-
-  </script>
-
-  <style is:inline>
-  @keyframes ani2{
-    0%{
-
-    background-size: 0%}
-	100%{background-size: 20rem}
-}
-
-@keyframes starsAni{
-	0%{background-position: 50% 0%;}
-	100%{background-position: 55% 200% ;}
-}
-
-.planet{
-  filter: grayscale(20%);
-  background:
-  url(mars.png) 50% 10% / 20rem no-repeat;
-
-}
-.stars {
-  background:
-    url(stars.png) repeat,rgb(24, 24, 27); 
-  animation: starsAni 10s ease-in infinite alternate-reverse;
-}
-</style>
   

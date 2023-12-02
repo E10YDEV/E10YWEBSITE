@@ -19,7 +19,7 @@
   strong,
   blockquote,
   table * {
-    @apply text-zinc-700 dark:text-zinc-300;
+    @apply text-zinc-800 dark:text-zinc-300;
   }
   kbd {
     @apply bg-white text-zinc-700;
@@ -93,14 +93,60 @@ input#nav-toggle:checked ~ #nav-menu {
   border-image-outset: 0;
   border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' ><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='rgb(228, 228, 231)' /></svg>");
 }
-@keyframes pulse{
-  0%  {transform: scale(0.9);}
-  40%  {transform: scale(1.05);}
-  60%  {transform: scale(1.05);}
-  100%  {transform: scale(0.9);}
-}
-.animate-custom{
-  animation: pulse 1s linear infinite;
 
+@keyframes ani2{
+  0%{background-size: 20rem; }
+
+30%{background-size: 0%;
+  background-position: 0% 0%;}
+70%{background-size: 0%;}
+100%{background-size: 20rem;
+ 
+  }
+}
+
+@keyframes starsAni{
+0%{background-position: 0px 0px;}
+100%{background-position: 625px 313px ;}
+}
+
+
+.animate {
+  animation: ani2 2s ;
+  animation-fill-mode: forwards;
+  
+}
+.animateReverse {
+  animation: ani2 5s reverse;
+  animation-fill-mode: forwards;
+}
+
+.planet{
+background:
+url("/mars.png") 50% 10% / 20rem no-repeat;
+
+}
+.stars {
+background:
+  url("/stars.png") repeat,rgb(24, 24, 27); 
+animation: starsAni 8s linear infinite;
+}
+
+.planet::before {
+content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(18, 16, 16, 0) 40%,
+      rgba(0, 0, 0, 0.25) 40%
+  );
+  background-size: 100% 7px;
+  z-index: 1;
+  pointer-events: none;
 }
 }

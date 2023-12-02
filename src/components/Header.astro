@@ -22,9 +22,9 @@ const { main }: { main: NavigationLink[] } = menu;
       <a href="/" class="logo flex items-center" aria-current="page">
         <figure>
           <Image
-            src="https://fontmeme.com/temporary/879289081c516ee78a364eb774f2de9a.png"
+            src="/1.png"
             alt={config.site.title}
-            class="w-12 rounded bg-zinc-950 bg-opacity-0"
+            class="w-20 rounded bg-zinc-950 bg-opacity-0"
             width={500}
             height={200}
             decoding="async"
@@ -37,9 +37,9 @@ const { main }: { main: NavigationLink[] } = menu;
       <a href="/" class="logo flex items-center" aria-current="page">
         <figure>
           <Image
-            src=https://fontmeme.com/temporary/76149efa9546832579130381615926f5.png
+            src="/1.png"
             alt={config.site.title}
-            class="w-12 rounded bg-zinc-950 bg-opacity-0"
+            class="w-40 rounded bg-zinc-950 bg-opacity-0"
             width={500}
             height={200}
             decoding="async"
@@ -87,7 +87,7 @@ const { main }: { main: NavigationLink[] } = menu;
       <ul class="ml-auto hidden items-center gap-6 md:flex lg:flex">
         {
           main?.map((menu) => (
-            <li class="hover:underline underline-offset-8 decoration-4  text-md block rounded-lg px-2 py-2 text-zinc-500 transition-all hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200">
+            <li class="hover:underline font-heading underline-offset-8 decoration-4  text-md block rounded-lg px-2 py-2 text-zinc-500 transition-all hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200">
               <a href={menu?.url} class="relative flex  items-center">
                 {menu?.name === 'Home' ? <HomeIcon /> : menu?.name}
               </a>

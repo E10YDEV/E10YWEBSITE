@@ -3,15 +3,20 @@ import { Image } from "astro:assets";
 import config from "@config/config.json";
 import social from "@config/social";
 import Scripts from '@components/Scripts.astro';
+import Right from "@icons/RightIcon.astro";
+import Left from "@icons/LeftIcon.astro";
+
 
 const socialItems = social.networks;
 ---
 
-<section id="hero" class="bg-zinc-900  pixel-corners dark:dark-pixel-corners mb-10 flex justify-center items-center stars">
+<section id="hero" style="border-image-outset: 1;" class="bg-zinc-900  pixel-corners dark:dark-pixel-corners mb-10 flex justify-center items-center stars">
+
   <div id="heroInside" class="mx-auto planet pt-24 w-full px-4  pb-0 sm:px-6 lg:px-8 text-center relative">
+
     <div class="mb-0">
       <figure class="relative">
-        <div class="hidden dark:block">
+        <div class="block">
         <Image
           class="rounded-lg w-60 md:w-60 mx-auto"
           width={512}
@@ -22,28 +27,16 @@ const socialItems = social.networks;
           loading="lazy"
         />
     </div>
-    <div class="block dark:hidden">
-        <Image
-        class="rounded-lg w-60 md:w-60 mx-auto"
-        width={512}
-        height={512}
-        src=/1.png
-        alt={config.author.name}
-        decoding="async"
-        loading="lazy"
-      />
   </div>
-    
-
       </figure>
-      <p class="mt-4  drop-shadow-2xl font-heading text-lg text-white">
+      <h1 class="mt-4 relative z-40 font-heading text-sm sm:text-xl text-white">
         {"[Portfolio y Blog de Eloy Martinez]"}
-      </p>
-      <button class="planeta">PLANETA1</button>
-      <button class="planeta">PLANETA2</button>
+      </h1>
+      <div class="flex items-center justify-around  pt-2">
+        <Left/>
+        <Right/>
+        </div>
     </div>
-  </div>
-
+    </div>
 </section>
-
 <Scripts/>
