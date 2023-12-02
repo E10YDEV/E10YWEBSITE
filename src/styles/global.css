@@ -123,7 +123,7 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .planet{
 background:
-url("/mars.png") 50% 10% / 20rem no-repeat;
+url("/mars.png") 50% 10% / 22rem no-repeat;
 
 }
 .stars {
@@ -142,8 +142,8 @@ content: " ";
   right: 0;
   background: linear-gradient(
       to bottom,
-      rgba(18, 16, 16, 0) 40%,
-      rgba(0, 0, 0, 0.25) 40%
+      rgba(18, 16, 16, 0) 30%,
+      rgba(0, 0, 0, 0.25) 30%
   );
   background-size: 100% 7px;
   z-index: 1;
