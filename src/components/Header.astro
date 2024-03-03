@@ -22,9 +22,9 @@ const { main }: { main: NavigationLink[] } = menu;
       <a href="/" class="logo flex items-center" aria-current="page">
         <figure>
           <Image
-            src="/1.png"
+            src="/2.png"
             alt={config.site.title}
-            class="w-20 rounded bg-zinc-950 bg-opacity-0"
+            class="w-24 rounded bg-zinc-950 bg-opacity-0"
             width={500}
             height={200}
             decoding="async"
@@ -32,6 +32,7 @@ const { main }: { main: NavigationLink[] } = menu;
           />
         </figure>
       </a>
+
     </div>
     <div class="hidden dark:block">
       <a href="/" class="logo flex items-center" aria-current="page">
@@ -39,7 +40,7 @@ const { main }: { main: NavigationLink[] } = menu;
           <Image
             src="/1.png"
             alt={config.site.title}
-            class="w-40 rounded bg-zinc-950 bg-opacity-0"
+            class="w-24 rounded bg-zinc-950 bg-opacity-0"
             width={500}
             height={200}
             decoding="async"
@@ -64,7 +65,7 @@ const { main }: { main: NavigationLink[] } = menu;
         <!-- /navbar toggler -->
         <div
           id="nav-menu"
-          class="absolute right-0 top-8 z-10 mt-2 hidden w-44 divide-y divide-zinc-100 rounded-md border border-zinc-100 bg-white p-2 shadow-lg dark:border-zinc-900 dark:bg-zinc-800"
+          class="absolute right-0 top-8 z-10 mt-2 hidden w-44 divide-y divide-zinc-100 border border-zinc-100 bg-white p-2 shadow-lg dark:border-zinc-900 dark:bg-zinc-800"
         >
           <ul class="py-2 text-sm text-zinc-700 dark:text-zinc-200">
             {
@@ -73,7 +74,7 @@ const { main }: { main: NavigationLink[] } = menu;
                   
                   <a
                     href={menu?.url}
-                    class="block rounded-lg px-4 py-2 text-sm text-zinc-500 hover:bg-zinc-50 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-200 dark:hover:text-zinc-800"
+                    class="block rounded-lg  font-heading px-4 py-2 text-sm text-zinc-500 hover:bg-zinc-50 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-200 dark:hover:text-zinc-800"
                   >
                   
                     {menu?.name}

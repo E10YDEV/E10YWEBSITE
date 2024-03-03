@@ -7,7 +7,7 @@ const paginationList = Array.from({ length }, (_, i) => i + 1);
 ---
 
 <nav class="mt-12">
-  <ol class="flex justify-center gap-3 text-xs font-medium">
+  <ol class="flex justify-center gap-3 text-xs font-heading font-medium">
     {
       prevUrl ? (
         <li>
@@ -27,7 +27,7 @@ const paginationList = Array.from({ length }, (_, i) => i + 1);
           <a
             href={`${firstUrl}${num == 1 ? '' : '' + num}`}
             class={`block h-8 w-8 rounded border text-center leading-8 text-zinc-900 dark:text-white ${
-              currentPage == num ? 'border-indigo-600 bg-indigo-500 !text-white' : ''
+              currentPage == num ? ' bg-zinc-800 !text-white' : ''
             }`}
           >
             {num}

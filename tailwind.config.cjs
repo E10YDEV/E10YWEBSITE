@@ -27,6 +27,7 @@ module.exports = {
             'h1, h2, h3, h4, h5': {
               color: 'rgb(var(--color-text-heading))',
             },
+
             iframe: {
               'border-radius': '0.5rem',
             },
@@ -58,8 +59,7 @@ module.exports = {
             },
             blockquote: {
               "font-style": "normal",
-              border:'rgba(128, 128, 128, 0.8) 2px solid',
-              'border-radius': '0.4rem',
+              border:'rgba(128, 128, 128, 0.8) 4px solid',
               position: 'relative',
               width: '96%',
               margin: '0 auto',
