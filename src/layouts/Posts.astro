@@ -29,12 +29,12 @@ type PostType = {
   {
     posts?.slice(0, config.site.pageSize).map((post: PostType) => (
   
-    <article class="hover:scale-105  transition-transform pb-5 pixel-corners dark:dark-pixel-corners flex w-full flex-col items-center justify-center  rounded-md " >
+    <article class=" clip-element hover:scale-105 transition-transform pb-5 shape flex w-full flex-col items-center justify-center rounded-md " >
     <div class="mb-auto leading-[0.1] ">
         {post.data.categories.slice(0, 2).map((item) => (
             <a
                 href={`/categories/${slugify(item)}`}
-                class="capitalize text-md relative z-10  px-3 p-1.5 font-bold dark:font-medium text-zinc-900 dark:text-white group-hover:text-zinc-600 bg-white dark:bg-zinc-900 "
+                class="capitalize text-md relative z-10 hover:text-yellow-300 px-3 p-1.5 font-bold dark:font-medium text-zinc-900 dark:text-white group-hover:text-zinc-600 bg-white dark:bg-zinc-900 "
             >
                 {item}
             </a>
@@ -59,9 +59,9 @@ type PostType = {
           <FormattedDate date={post.data.pubDate} />
 
         </div>
-        <div class="relative">
+        <div class="relative ">
           
-          <h2 class="mt-3 text-l px-2 text-center leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
+          <h2 class="mt-3 text-md px-2  text-center leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
             <a href={`/blog/${post.slug}/`}>
               <span class="absolute inset-0 " />
               {post.data.title}
@@ -69,6 +69,7 @@ type PostType = {
           </h2>
 
         </div>
+
       </article>
     ))
   }

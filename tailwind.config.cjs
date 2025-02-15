@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-				sans: ['"Share Tech Mono"', ...defaultTheme.fontFamily.sans],
+				sans: ['"Pixelify Sans Variable"', ...defaultTheme.fontFamily.sans],
         heading: ['"Press Start 2P"', 'sans-serif'],
 			  },
       typography: (theme) => ({
@@ -27,7 +27,6 @@ module.exports = {
             'h1, h2, h3, h4, h5': {
               color: 'rgb(var(--color-text-heading))',
             },
-
             iframe: {
               'border-radius': '0.5rem',
             },
@@ -47,9 +46,7 @@ module.exports = {
             li: {
               'margin-bottom': '0.5rem',
               color: 'rgb(var(--color-code-text))',
-              'font-size': '1rem',
               'line-height': '1.5',
-              'font-family': "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
             },
             'code::before': {
               content: 'none',

@@ -11,26 +11,21 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Base>
-  <Hero2 slot="hero2"/>
-  <Separator word="Posts"/>
-  <Posts posts={posts} />
-  <Separator word="Sobre mí"/>
-
-  <div class=" flex p-4 flex-col w-full pixel-corners dark:dark-pixel-corners ">
-    <div class="flex flex-col sm:flex-row  px-1 w-full text-center sm:text-left">
-      <div class="flex flex-col mb-10 sm:mb-0 pr-2">
-        <h2 class="text-lg mb-1 font-light">Hola soy Eloy !!</h4>
-        <p class="text-sm text-justify mr-1">Me dedico a la investigación farmacéutica, pero recientemente me sumergí en la programación. Este blog surge de mi interés por la informática. Mi objetivo es respaldar mi aprendizaje y colaborar en proyectos de código abierto.</p>
-      </div>
-      <div class=" transition-transform pixel-corners dark:dark-pixel-corners m-1 relative overflow-visible flex-shrink-0 h-[8rem] w-[10rem] aspect-1/1 self-center">
-        <image class="absolute left-3 -top-[2.4rem] w-40 h-40"src="/descarga (1).png"/>
-      </div>
-      
+<!--   <Hero2 slot="hero2"/> -->
+<div class=" flex p-4 flex-col w-full pixel-corners dark:dark-pixel-corners ">
+  <div class="flex flex-col sm:flex-row  px-1 w-full text-center sm:text-left">
+    <div class="flex flex-col mb-10 sm:mb-0 pr-2">
+      <h2 class="text-lg mb-1 font-light">Hola soy Eloy !!</h4>
+      <p class="text-m text-justify mr-1">Me dedico a la investigación farmacéutica, pero recientemente me sumergí en la programación. Este blog surge de mi interés por la informática. Mi objetivo es respaldar mi aprendizaje y colaborar en proyectos de código abierto.</p>
+    </div>
+    <div class="pixel-corners dark:dark-pixel-corners m-1 relative overflow-visible flex-shrink-0 aspect-1/1 self-center">
+    <div class="animated-image w-40 h-40">
     </div>
     </div>
   </div>
-
-
-
-  
+  </div>
+</div>
+  <Separator word="Posts"/>
+  <Posts posts={posts} />
+  <Separator word="Sobre mí"/>
 </Base>
