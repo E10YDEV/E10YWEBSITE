@@ -4,6 +4,7 @@ import FormattedDate from "@components/FormattedDate.astro";
 import config from "@config/config.json";
 import { slugify } from "@utils/slug";
 
+
 const { posts } = Astro.props;
 
 type PostType = {
@@ -29,12 +30,12 @@ type PostType = {
   {
     posts?.slice(0, config.site.pageSize).map((post: PostType) => (
   
-    <article class=" clip-element hover:scale-105 transition-transform pb-5 shape flex w-full flex-col items-center justify-center rounded-md " >
+    <article class="clip-element hover:scale-105 transition-transform pb-5 shape flex w-full flex-col items-center justify-center rounded-md " >
     <div class="mb-auto leading-[0.1] ">
         {post.data.categories.slice(0, 2).map((item) => (
             <a
                 href={`/categories/${slugify(item)}`}
-                class="capitalize text-md relative z-10 hover:text-yellow-300 px-3 p-1.5 font-bold dark:font-medium text-zinc-900 dark:text-white group-hover:text-zinc-600 bg-white dark:bg-zinc-900 "
+                class="capitalize text-md relative z-10 px-3 p-1.5 font-bold dark:font-medium text-zinc-900 dark:text-white group-hover:text-zinc-600 bg-white dark:bg-zinc-900 "
             >
                 {item}
             </a>
@@ -42,7 +43,7 @@ type PostType = {
     </div>
         <div class="block overflow-hidden pt-5 mb-4 ">
           {post.data.heroImage && (
-            <figure class="w-5/6  h-auto md:h-[100px] object-cover mx-auto">
+            <figure class="w-5/6  h-auto  object-cover mx-auto">
               <Image
                 class="transition duration-300 ease-in-out"
                 src={post.data.heroImage}
@@ -56,12 +57,12 @@ type PostType = {
           )}
         </div>
         <div class="flex items-center gap-x-4 text-xs text-zinc-900 dark:text-white">
-          <FormattedDate date={post.data.pubDate} />
-
+          <FormattedDate date={post.data.pubDate}/>
         </div>
         <div class="relative ">
           
-          <h2 class="mt-3 text-md px-2  text-center leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
+          <h2 class="mt-3 text-3xl md:text-xl lg:text-2xl px-2 text-center leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
+
             <a href={`/blog/${post.slug}/`}>
               <span class="absolute inset-0 " />
               {post.data.title}

@@ -27,6 +27,12 @@
   mark {
     @apply bg-yellow-300;
   }
+  body{
+    cursor: url('https://unpkg.com/nes.css@2.3.0/assets/cursor.png'), auto;
+  }
+  a{
+    cursor: url('https://unpkg.com/nes.css@2.3.0/assets/cursor-click.png'), auto;
+  }
 }
 
 .video-wrapper {
@@ -94,17 +100,16 @@ input#nav-toggle:checked ~ #nav-menu {
   border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' ><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='rgb(228, 228, 231)' /></svg>");
 }
 .animated-image {
-  width: 50%; /* Cada frame ocupa la mitad del spritesheet */
+  width: 50%;
   height: 100%;
   background-image: url('/SPRITE.png');
-  background-size: 200% 100%; /* 2 frames en el spritesheet */
+  background-size: 200% 100%;
   background-position: 0 0;
   animation: animateSprite 3s steps(1) infinite;
 }
 .shape {
-  /* Ajusta el contenedor para que sea responsive */
   width: 100%;
-  aspect-ratio: 16 / 10;      /* Mantiene proporción, si lo deseas */
+  aspect-ratio: 16 / 10;
   position: relative;
 }
 
@@ -121,13 +126,13 @@ input#nav-toggle:checked ~ #nav-menu {
   position: absolute;
   inset: 0;
   background: rgb(24, 24, 27);
-  clip-path: polygon(0 0, 89% 0, 100% 17%, 100% 100%, 0 100%);
-  transform: scale(0.97);
+  clip-path: polygon(0 0, 90% 0, 100% 16%, 100% 100%, 0 100%);
+  transform: scale(0.96);
   transform-origin: center center; 
   z-index: -10;
 }
 .shape:hover::before {
-  background: yellow;              /* Nuevo color al pasar el mouse */
+  background: #db2777;              /* Nuevo color al pasar el mouse */
 }
 
 
