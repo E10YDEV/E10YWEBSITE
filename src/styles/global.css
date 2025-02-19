@@ -112,7 +112,27 @@ input#nav-toggle:checked ~ #nav-menu {
   aspect-ratio: 16 / 10;
   position: relative;
 }
+.shape:hover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  filter: drop-shadow(8px 10px 5px #9b9b9b29);
+}
+.icohearth:hover{
+  filter: drop-shadow(0px 0px 8px #ff1313b4);
+  transition: 0.5s;
 
+}
+.bar {
+  background:
+      linear-gradient(to right,
+        #303030 0%, #303030 16.5%, white 16.5%, white 19%,
+        #404040 19%, #404040 33%, white 33%, white 36%,
+        #505050 36%, #505050 49.5%, white 49.5%, white 52%,
+        #606060 52%, #606060 66%, white 66%, white 69%,
+        #707070 69%, #707070 82.5%, white 82.5%, white 85%,
+        transparent 85%, transparent 99%, white 99%);
+}
 .shape::before {
   content: '';
   position: absolute;
@@ -131,9 +151,9 @@ input#nav-toggle:checked ~ #nav-menu {
   transform-origin: center center; 
   z-index: -10;
 }
-.shape:hover::before {
-  background: #db2777;              /* Nuevo color al pasar el mouse */
-}
+/* .shape:hover::before {
+  background: #db2777;
+} */
 
 
 @keyframes animateSprite {

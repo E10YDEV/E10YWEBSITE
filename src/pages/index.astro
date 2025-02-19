@@ -1,9 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import HomePagination from "@components/HomePagination.astro";
 import Base from "@layouts/Base.astro";
 import Posts from "@layouts/Posts.astro";
-import Hero2 from "@components/Hero2.astro";
+import HeartIcon from "@components/icons/HeartIcon.astro";
 import Separator from "@components/Separator.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -13,24 +12,22 @@ const posts = (await getCollection("blog")).sort(
 <Base>
 
 <div class="flex p-4 flex-col w-full pixel-corners dark:dark-pixel-corners">
-  <div class="flex flex-col sm:flex-row px-1 w-full text-center sm:text-left">
-    <div class="flex flex-col mb-10 sm:mb-0 pr-2">
-      <h2 class="text-lg mb-1 font-light">Hola soy Eloy !!</h2>
-      <p class="text-m text-justify mr-1">
-        Me dedico a la investigación farmacéutica, pero recientemente me sumergí en la programación.
-        Este blog surge de mi interés por la informática. Mi objetivo es respaldar mi aprendizaje y colaborar en proyectos de código abierto.
-      </p>
+  <div class="flex flex-row px-1 w-full text-center  items-center sm:text-left">
+    <div class="flex flex-col  sm:mb-0 pr-2">
+      <p class="lg:text-xl sm:text-sm md:text-base text-xs text-left mr-3 ml-3">
+       Hola soy Eloy, un apasionado del aprendizaje constante y actualmente estudio programación en 42 para fortalecer mis habilidades. Tengo experiencia en desarrollo web y contribuyo al código abierto. Aunque trabajo en I+D farmacéutico, la programación me apasiona. Uso este blog para compartir conocimientos y seguir creciendo. ¡Bienvenido!
     </div>
     <div class="flex flex-col items-center">
-      <!-- Imagen -->
       <div class="pixel-corners dark:dark-pixel-corners m-1 relative overflow-visible flex-shrink-0 aspect-1/1 self-center">
-        <div class="animated-image w-40 h-40"></div>
+        <div class="animated-image lg:w-40 lg:h-40 sm:w-40 sm:h-40 md:w-40 md:h-40 h-24 w-24"></div>
       </div>
-      <div class="self-center m-1 w-40 pixel-corners dark:dark-pixel-corners relative text-center text-xl">
-        <p class="content-center">Lvl. 27</p>
+      <div class="relative">
+        <HeartIcon/>
+        <div class="bar self-center m-1 lg:w-40 sm:w-40 lg:h-5 md:w-40 md:h-5 h-5 w-24  pixel-corners dark:dark-pixel-corners relative text-center text-xl">
+        </div>
+      </div>
       </div>
     </div>
-
   </div>
 </div>
 
