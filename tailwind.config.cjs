@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
 				sans: ['"Pixelify Sans Variable"', ...defaultTheme.fontFamily.sans],
         heading: ['"Press Start 2P"', 'sans-serif'],
+        custom: ['"Share Tech Mono"', 'sans-serif'],
 			  },
       typography: (theme) => ({
         DEFAULT: {

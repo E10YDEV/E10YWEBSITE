@@ -11,14 +11,14 @@
   }
   
   h2, h3, h4, h5, h6 {
-    @apply text-zinc-800 md:text-2xl dark:text-zinc-200 font-sans !important;
+    @apply text-zinc-800  dark:text-zinc-200 font-sans !important;
   }
   p,
   li,
   strong,
   blockquote,
   table * {
-    @apply text-zinc-800 dark:text-zinc-300;
+    @apply text-zinc-800 font-custom dark:text-zinc-300;
   
   }
   kbd {
