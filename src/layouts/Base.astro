@@ -104,7 +104,7 @@ const ogImage = createOgImage({
     <meta name="twitter:card" content="summary_large_image" />
     <ViewTransitions />
   </head>
-  <body class="bg-white dark:bg-zinc-900">
+  <body class="bg-white dark:bg-zinc-900 brick">
     <Header />
     
     {!blogpost && <Hero />}
@@ -112,11 +112,6 @@ const ogImage = createOgImage({
       <slot name="hero2"/>
       <slot />
     </main>
-    {!blogpost && config.features.youtube && <FeaturedVideos />}
     <Footer />
-    <script>
-      // This is a hack to get vite-plugin-pwa to generate a sw.js file.
-      // Do not remove this script tag.
-    </script>
   </body>
 </html>

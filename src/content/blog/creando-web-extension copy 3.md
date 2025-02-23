@@ -1,5 +1,5 @@
 ---
-title: 'Creando una extensión de navegador'
+title: 'naveptosuitectura de una Web Extension'
 description: 'Pequeña guía sobre conceptos y arquitectura de una Web Extension'
 pubDate: 'Nov 08 2023'
 heroImage: '/WebExt_Diagram.png'

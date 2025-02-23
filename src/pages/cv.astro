@@ -1,0 +1,91 @@
+---
+import Base from "@layouts/Base.astro";
+import Page from "@layouts/Page.astro";
+import Separator from "@components/Separator.astro";
+---
+
+<Base meta_title="EloyCV">
+  <Page title="EloyCV">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+      body {
+          font-family: 'Press Start 2P', cursive;
+          background-color: #000;
+          color: #fff;
+      }
+
+      .pixel-border {
+          box-shadow: 0 0 0 2px #fff,
+                      0 0 0 4px #000;
+      }
+
+      .timeline-dot::before {
+          content: '';
+          position: absolute;
+          width: 18px;
+          height: 18px;
+          background-color: #fff;
+          left: -7px;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+
+      .timeline-line::before {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: calc(100% + 2rem);
+          background-color: #fff;
+          left: 0;
+          top: 0;
+      }
+  </style>
+</head>
+<body class="p-4 md:p-8">
+  <Separator word="Experiencia"/>
+  <div class="w-full mx-auto">
+      <div class="space-y-8 relative">
+          <div class="timeline-line"> 
+          <div class="pl-8 relative timeline-dot">
+              <div class=" dark-pixel-corners bg-zinc-900 p-4">
+                <h2 class="text-m mb-1">2019 - Presente</h2>
+                <h3 class="text-3xl mb-2">Técnico Superior Lab I+D - GRIFOLS</h3>
+                <p class="text-s leading-relaxed">
+                  Especialista en prototipos e integración de sistemas en entornos de laboratorio.  
+                  Desarrollo y optimización de un nuevo inmunoensayo desde su fase inicial hasta su lanzamiento al mercado.  
+                  <br>
+                  <strong>Habilidades clave:</strong> 
+                  <br>
+                  ✅ Integración de sistemas y maquinaria de laboratorio.<br>
+                  ✅ Espectrofotometría (Nanodrop UV-VIS) y espectroscopia (IR-ATR).<br> 
+                  ✅ Cromatografía preparatoria (HPLC, SEC).<br>
+                </p>
+            </div>
+              </div>
+          </div>
+      </div>
+      <div class="space-y-8 relative">
+        <div class="timeline-line"></div>  
+        <div class="pl-8 relative timeline-dot">
+            <div class=" dark-pixel-corners bg-zinc-900 p-4">
+                <h2 class="text-m mb-1">2022 - 2023</h2>
+                <h3 class="text-3xl mb-2">Desarrollador Junior - CERTIOREM</h3>
+                <p class="text-s leading-relaxed">Proyecto web basado de migración de una plataforma JAVA a .Net (MVC).</p>
+            </div>
+        </div>
+    </div>
+    <div class="space-y-8 relative">
+      <div class="timeline-line"></div>  
+      <div class="pl-8 relative timeline-dot">
+          <div class=" dark-pixel-corners bg-zinc-900 p-4">
+              <h2 class="text-m mb-1">2022 - 2023</h2>
+              <h3 class="text-3xl mb-2">Analista de laboratorio - FAES FARMA</h3>
+              <p class="text-s leading-relaxed">Análisita cromátografico de fármacos en el aréa de Investigación.</p>
+          </div>
+      </div>
+  </div>
+  </div>
+</body>
+  </Page>
+</Base>

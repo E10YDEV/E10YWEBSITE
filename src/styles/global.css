@@ -11,14 +11,14 @@
   }
   
   h2, h3, h4, h5, h6 {
-    @apply text-zinc-800  dark:text-zinc-200 font-sans !important;
+    @apply text-zinc-800  dark:text-zinc-200 font-normal font-sans;
   }
   p,
   li,
   strong,
   blockquote,
   table * {
-    @apply text-zinc-800 font-custom dark:text-zinc-300;
+    @apply text-zinc-800 font-custom font-normal dark:text-zinc-300;
   
   }
   kbd {
@@ -55,7 +55,9 @@ input#nav-toggle:checked ~ label#hide-button {
 input#nav-toggle:checked ~ #nav-menu {
   @apply block md:flex;
 }
-
+.number{
+  filter: drop-shadow(7px 9px 0px #0000005c);
+}
 .sun {
   @apply stroke-zinc-500 transition-all;
 }
@@ -90,6 +92,9 @@ input#nav-toggle:checked ~ #nav-menu {
   border-image-outset: 0;
   border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' ><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='rgb(24, 24, 27)' /></svg>");
 } */
+.brick{
+background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h38v18H1V1zM0 23h18v18H0V23zm22 0h20v18H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
 
 .dark-pixel-corners {
   border-style: solid;
@@ -107,21 +112,236 @@ input#nav-toggle:checked ~ #nav-menu {
   background-position: 0 0;
   animation: animateSprite 3s steps(1) infinite;
 }
+.pixel-corners2,
+.pixel-corners2--wrapper {
+  clip-path: polygon(0px calc(100% - 12px),
+    6px calc(100% - 12px),
+    6px calc(100% - 6px),
+    12px calc(100% - 6px),
+    12px 100%,
+    calc(100% - 12px) 100%,
+    calc(100% - 12px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 12px),
+    100% calc(100% - 12px),
+    100% 12px,
+    calc(100% - 6px) 12px,
+    calc(100% - 6px) 6px,
+    calc(100% - 12px) 6px,
+    calc(100% - 12px) 0px,
+    12px 0px,
+    12px 6px,
+    6px 6px,
+    6px 12px,
+    0px 12px);
+  position: relative;
+}
+.pixel-corners2 {
+  border: 6px solid transparent;
+}
+.pixel-corners2--wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+.pixel-corners2--wrapper .pixel-corners {
+  display: block;
+  clip-path: polygon(6px 12px,
+    12px 12px,
+    12px 6px,
+    calc(100% - 12px) 6px,
+    calc(100% - 12px) 12px,
+    calc(100% - 6px) 12px,
+    calc(100% - 6px) calc(100% - 12px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 12px) calc(100% - 6px),
+    12px calc(100% - 6px),
+    12px calc(100% - 12px),
+    6px calc(100% - 12px));
+}
+.pixel-corners2::after,
+.pixel-corners2--wrapper::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0px calc(100% - 12px),
+    6px calc(100% - 12px),
+    6px calc(100% - 6px),
+    12px calc(100% - 6px),
+    12px 100%,
+    calc(100% - 12px) 100%,
+    calc(100% - 12px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 12px),
+    100% calc(100% - 12px),
+    100% 12px,
+    calc(100% - 6px) 12px,
+    calc(100% - 6px) 6px,
+    calc(100% - 12px) 6px,
+    calc(100% - 12px) 0px,
+    12px 0px,
+    12px 6px,
+    6px 6px,
+    6px 12px,
+    0px 12px,
+    0px 50%,
+    6px 50%,
+    6px 12px,
+    12px 12px,
+    12px 6px,
+    calc(100% - 12px) 6px,
+    calc(100% - 12px) 12px,
+    calc(100% - 6px) 12px,
+    calc(100% - 6px) calc(100% - 12px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 12px) calc(100% - 6px),
+    12px calc(100% - 6px),
+    12px calc(100% - 12px),
+    6px calc(100% - 12px),
+    6px 50%,
+    0px 50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  display: block;
+  pointer-events: none;
+}
+.pixel-corners2::after {
+  margin: -6px;
+}
+.shape,
+.shape-wrapper {
+  clip-path: polygon(0px calc(100% - 24px),
+    6px calc(100% - 24px),
+    6px calc(100% - 12px),
+    12px calc(100% - 12px),
+    12px calc(100% - 6px),
+    24px calc(100% - 6px),
+    24px 100%,
+    calc(100% - 24px) 100%,
+    calc(100% - 24px) calc(100% - 6px),
+    calc(100% - 12px) calc(100% - 6px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 24px),
+    100% calc(100% - 24px),
+    100% 24px,
+    calc(100% - 6px) 24px,
+    calc(100% - 6px) 12px,
+    calc(100% - 12px) 12px,
+    calc(100% - 12px) 6px,
+    calc(100% - 24px) 6px,
+    calc(100% - 24px) 0px,
+    24px 0px,
+    24px 6px,
+    12px 6px,
+    12px 12px,
+    6px 12px,
+    6px 24px,
+    0px 24px);
+  position: relative;
+}
 .shape {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  position: relative;
+  border: 6px solid transparent;
 }
-.shape:hover {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  position: relative;
-  filter: drop-shadow(8px 10px 5px #9b9b9b29);
+.shape--wrapper {
+  width: fit-content;
+  height: fit-content;
 }
+.shape--wrapper .shape-corners {
+  display: block;
+  clip-path: polygon(6px 24px,
+    12px 24px,
+    12px 12px,
+    24px 12px,
+    24px 6px,
+    calc(100% - 24px) 6px,
+    calc(100% - 24px) 12px,
+    calc(100% - 12px) 12px,
+    calc(100% - 12px) 24px,
+    calc(100% - 6px) 24px,
+    calc(100% - 6px) calc(100% - 24px),
+    calc(100% - 12px) calc(100% - 24px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 24px) calc(100% - 12px),
+    calc(100% - 24px) calc(100% - 6px),
+    24px calc(100% - 6px),
+    24px calc(100% - 12px),
+    12px calc(100% - 12px),
+    12px calc(100% - 24px),
+    6px calc(100% - 24px));
+}
+.shape::after,
+.shape--wrapper::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0px calc(100% - 24px),
+    6px calc(100% - 24px),
+    6px calc(100% - 12px),
+    12px calc(100% - 12px),
+    12px calc(100% - 6px),
+    24px calc(100% - 6px),
+    24px 100%,
+    calc(100% - 24px) 100%,
+    calc(100% - 24px) calc(100% - 6px),
+    calc(100% - 12px) calc(100% - 6px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 12px),
+    calc(100% - 6px) calc(100% - 24px),
+    100% calc(100% - 24px),
+    100% 24px,
+    calc(100% - 6px) 24px,
+    calc(100% - 6px) 12px,
+    calc(100% - 12px) 12px,
+    calc(100% - 12px) 6px,
+    calc(100% - 24px) 6px,
+    calc(100% - 24px) 0px,
+    24px 0px,
+    24px 6px,
+    12px 6px,
+    12px 12px,
+    6px 12px,
+    6px 24px,
+    0px 24px,
+    0px 50%,
+    6px 50%,
+    6px 24px,
+    12px 24px,
+    12px 12px,
+    24px 12px,
+    24px 6px,
+    calc(100% - 24px) 6px,
+    calc(100% - 24px) 12px,
+    calc(100% - 12px) 12px,
+    calc(100% - 12px) 24px,
+    calc(100% - 6px) 24px,
+    calc(100% - 6px) calc(100% - 24px),
+    calc(100% - 12px) calc(100% - 24px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 24px) calc(100% - 12px),
+    calc(100% - 24px) calc(100% - 6px),
+    24px calc(100% - 6px),
+    24px calc(100% - 12px),
+    12px calc(100% - 12px),
+    12px calc(100% - 24px),
+    6px calc(100% - 24px),
+    6px 50%,
+    0px 50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  display: block;
+  pointer-events: none;
+}
+.shape::after {
+  margin: -6px;
+}
+
 .icohearth:hover{
   filter: drop-shadow(0px 0px 8px #ff1313b4);
   transition: 0.5s;
-
 }
 .bar {
   background:
@@ -133,29 +353,9 @@ input#nav-toggle:checked ~ #nav-menu {
         #707070 69%, #707070 82.5%, white 82.5%, white 85%,
         transparent 85%, transparent 99%, white 99%);
 }
-.shape::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: white;
-  clip-path: polygon(0 0, 89% 0, 100% 17%, 100% 100%, 0 100%);
-  z-index: -20;
-}
-.shape::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgb(24, 24, 27);
-  clip-path: polygon(0 0, 90% 0, 100% 16%, 100% 100%, 0 100%);
-  transform: scale(0.96);
-  transform-origin: center center; 
-  z-index: -10;
-}
-/* .shape:hover::before {
-  background: #db2777;
-} */
+.bounce-top {
 
-
+}
 @keyframes animateSprite {
   0%, 60% { background-position: 0 0; }
   61%, 80% { background-position: -100% 0; }
@@ -164,59 +364,4 @@ input#nav-toggle:checked ~ #nav-menu {
   
 }
 
-@keyframes ani2{
-  0%{background-size: 20rem; }
-
-30%{background-size: 0%;
-  background-position: 0% 0%;}
-70%{background-size: 0%;}
-100%{background-size: 20rem;
- 
-  }
-}
-
-@keyframes starsAni{
-0%{background-position: 0px 0px;}
-100%{background-position: 0px 313px ;}
-}
-
-
-.animate {
-  animation: ani2 2s ;
-  animation-fill-mode: forwards;
-  
-}
-.animateReverse {
-  animation: ani2 5s reverse;
-  animation-fill-mode: forwards;
-}
-
-.planet{
-background:
-url("/mars.png") 50% 10% / 22rem no-repeat;
-
-}
-.stars {
-background:
-  url("/stars.png") repeat,rgb(24, 24, 27); 
-animation: starsAni 8s linear infinite;
-}
-
-.planet::before {
-content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(
-      to bottom,
-      rgba(18, 16, 16, 0) 50%,
-      rgba(0, 0, 0, 0.10) 50%
-  );
-  background-size: 100% 7px;
-  z-index: 1;
-  pointer-events: none;
-}
 }
