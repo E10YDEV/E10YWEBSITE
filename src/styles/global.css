@@ -85,8 +85,7 @@ input#nav-toggle:checked ~ #nav-menu {
 @layer components {
   .header {
     background: 
-        url("/back2.png") repeat-x top;  /* Se repite en la parte superior */
- /* Imagen en la parte inferior con fondo negro */
+        url("/back2.png") repeat-x top;
     background-size: 25px 25px;
 }
 
@@ -156,7 +155,7 @@ input#nav-toggle:checked ~ #nav-menu {
     background-color: #d5d5d5;
     color: #000;
     padding: 5px;
-    box-shadow: 0 -3px #fff, 0 -6px #000, 3px 0 #fff, 3px -3px #000, 6px 0 #000, 0 3px #fff, 0 6px #000, -3px 0 #fff, -3px 3px #000, -6px 0 #000, -3px -3px #000, 3px 3px #000, 3px 9px #aaaaaa4c, 6px 6px #aaaaaa4c, 9px 3px #aaaaaa4c;
+    box-shadow: 0 -4px #d5d5d5, 0 -6px #000, 3px 0 #d5d5d5, 3px -3px #000, 6px 0 #000, 0 3px #d5d5d5, 0 6px #000, -3px 0 #d5d5d5, -3px 3px #000, -6px 0 #000, -3px -3px #000, 3px 3px #000, 3px 9px #aaaaaa4c, 6px 6px #aaaaaa4c, 9px 3px #aaaaaa4c;
     transition: all 0.3s ease;
     box-sizing: border-box;
   }
@@ -266,7 +265,7 @@ input#nav-toggle:checked ~ #nav-menu {
   border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' ><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='rgb(24, 24, 27)' /></svg>");
 } */
 .brick{
-background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h38v18H1V1zM0 23h18v18H0V23zm22 0h20v18H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h38v18H1V1zM0 23h18v18H0V23zm22 0h20v18H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark-pixel-corners {
