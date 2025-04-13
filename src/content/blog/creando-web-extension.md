@@ -2,7 +2,7 @@
 title: 'Creando una extensión de navegador'
 description: 'Pequeña guía sobre conceptos y arquitectura de una Web Extension'
 pubDate: 'Nov 08 2023'
-heroImage: '/WebExt.png'
+heroImage: '/WebExt_1.png'
 categories: ['javascript']
 authors: ['E10Y']
 tags: ['navegador', 'guia']

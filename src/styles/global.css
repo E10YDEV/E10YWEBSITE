@@ -83,9 +83,9 @@ input#nav-toggle:checked ~ #nav-menu {
   @apply stroke-zinc-200;
 }
 @layer components {
-  .logo{
+/*   .logo{
     transform: translateY(14px);
-  }
+  } */
   .header {
     background: url("/FINAL444.png") repeat-x bottom;
     filter: grayscale();
@@ -153,7 +153,7 @@ input#nav-toggle:checked ~ #nav-menu {
     margin: 10px 9px 29px 6px;
     text-align: center;
     font-weight: 700;
-    background-color: #d5d5d5;
+    background-color: #ffffff;
     color: #000;
     padding: 5px;
     box-shadow: 0 -4px #d5d5d5, 0 -6px #000, 3px 0 #d5d5d5, 3px -3px #000, 6px 0 #000, 0 3px #d5d5d5, 0 6px #000, -3px 0 #d5d5d5, -3px 3px #000, -6px 0 #000, -3px -3px #000, 3px 3px #000, 3px 9px #aaaaaa4c, 6px 6px #aaaaaa4c, 9px 3px #aaaaaa4c;
