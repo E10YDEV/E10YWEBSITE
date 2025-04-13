@@ -2,7 +2,7 @@
 title: 'Dawkins, biomorfos y evolución I'
 description: 'Introducción a teoria evolutiva mediante Biomorphos.'
 pubDate: 'Apr 07 2025'
-heroImage: '/Dawkins.png'
+heroImage: '/WebExt_Diagram.png'
 categories: ['Biologia']
 authors: ['E10Y']
 tags: ['ciencia', 'js']

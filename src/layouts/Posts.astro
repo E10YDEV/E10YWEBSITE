@@ -30,7 +30,7 @@ type PostType = {
   {
     posts?.slice(0, config.site.pageSize).map((post: PostType) => (
   
-    <article class="bg-zinc-900 hover:scale-110 transition-transform pb-5 pixel-corners2 flex w-full flex-col items-center justify-center rounded-md " >
+    <article class="bg-zinc-900 grayscale  hover:filter-none filter hover:scale-110 transition-transform pb-5 pixel-corners2 flex w-full flex-col items-center justify-center rounded-md " >
     <div class="mb-auto leading-[0.1] ">
         {post.data.categories.slice(0, 2).map((item) => (
             <a
@@ -44,7 +44,7 @@ type PostType = {
     <a href={`/blog/${post.slug}/`}>
         <div class="block overflow-hidden pt-5 mb-4 ">
           {post.data.heroImage && (
-            <figure class="w-5/6  h-auto  object-cover mx-auto">
+            <figure class="w-5/6 transition-transform hover:scale-110  h-auto  object-cover mx-auto">
               <Image
                 class="transition duration-300 ease-in-out"
                 src={post.data.heroImage}

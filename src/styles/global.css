@@ -83,12 +83,13 @@ input#nav-toggle:checked ~ #nav-menu {
   @apply stroke-zinc-200;
 }
 @layer components {
+  .logo{
+    transform: translateY(14px);
+  }
   .header {
-    background: 
-        url("/back2.png") repeat-x top;
-    background-size: 25px 25px;
-}
-
+    background: url("FINAL444.png") repeat-x bottom;
+    filter: grayscale();
+} 
 
   .crt::before {
     content: " ";
