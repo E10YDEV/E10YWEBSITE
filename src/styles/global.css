@@ -87,7 +87,7 @@ input#nav-toggle:checked ~ #nav-menu {
     transform: translateY(14px);
   }
   .header {
-    background: url("FINAL444.png") repeat-x bottom;
+    background: url("/FINAL444.png") repeat-x bottom;
     filter: grayscale();
 } 
 
