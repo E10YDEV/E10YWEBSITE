@@ -23,53 +23,51 @@ type PostType = {
   };
 };
 ---
-
-<div
-  class=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
->
+<div class="mx-auto grid grid-cols-1 gap-y-5 gap-x-8 lg:mx-0 lg:max-w-none">
   {
     posts?.slice(0, config.site.pageSize).map((post: PostType) => (
-  
-    <article class="bg-zinc-900  hover:scale-110 transition-transform pb-5 pixel-corners2 flex w-full flex-col items-center justify-center rounded-md " >
-    <div class="mb-auto leading-[0.1] ">
-        {post.data.categories.slice(0, 2).map((item) => (
+      <article class="bg-zinc-900 hover:scale-105 transition-transform pixel-corners2 flex w-full flex-col pl-6 p-2 items-center justify-center rounded-md md:grid md:grid-cols-2">
+{/*         <div class="mb-auto leading-[0.1] md:col-span-2">
+          {post.data.categories.slice(0, 2).map((item) => (
             <a
-                href={`/categories/${slugify(item)}`}
-                class="capitalize text-md relative z-10 px-3 p-1.5 font-bold dark:font-medium text-zinc-900 dark:text-white group-hover:text-zinc-600 bg-white dark:bg-zinc-900 "
+              href={`/categories/${slugify(item)}`}
+              class="capitalize text-md relative z-10 px-3 p-1.5 font-bold dark:font-medium text-zinc-900 dark:text-white group-hover:text-zinc-600 bg-white dark:bg-zinc-900"
             >
-                {item}
+              {item}
             </a>
-        ))}
+          ))}
+        </div> */}
+        <a href={`/blog/${post.slug}/`} class="w-full flex md:grid md:grid-cols-6 md:col-span-2">
+  <div class="flex justify-left items-center">
+    {post.data.heroImage && (
+      <figure class="w-[130px] transition-transform hover:scale-110 h-auto object-cover">
+        <Image
+          class="transition hover:filter-none filter grayscale duration-300 ease-in-out"
+          src="/FLIPP.png"
+          alt={post.data.title}
+          width={500}
+          height={500}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+    )}
+  </div>
+  <div class="flex flex-col justify-center md:col-span-4 p-4">
+    <div class="flex  gap-x-4 text-s text-zinc-900 dark:text-white">
+      <FormattedDate date={post.data.pubDate}/>
     </div>
-    <a href={`/blog/${post.slug}/`}>
-        <div class="block overflow-hidden pt-5 mb-4 ">
-          {post.data.heroImage && (
-            <figure class="w-5/6 transition-transform hover:scale-110  h-auto  object-cover mx-auto">
-              <Image
-                class="transition hover:filter-none filter grayscale duration-300 ease-in-out"
-                src={post.data.heroImage}
-                alt={post.data.title}
-                width={960}
-                height={480}
-                decoding="async"
-                loading="lazy"
-              />
-            </figure>
-          )}
-        </div>
-        <div class="flex items-center justify-center gap-x-4 text-xs text-zinc-900 dark:text-white">
-          <FormattedDate date={post.data.pubDate}/>
-        </div>
-        <div class="md:p-0 lg:pd-0 p-4 relative">
-          <h2 class="mt-3 text-3xl md:text-xl lg:text-2xl px-2 text-center leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
-
-              <span class="w-1/1 text-center ">
-              {post.data.title}
-              </span>
-          </h2>
-        </div>
-      </a>
+    <h2 class="mt-1 text-3xl md:text-3xl lg:text-3xl leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
+      <span class="w-full text-center">
+        {post.data.title}
+      </span>
+      <p class="mt-1 line-clamp-3 text-base leading-6 text-zinc-600">{post.data.description}</p>
+    </h2>
+  </div>
+</a>
       </article>
     ))
   }
 </div>
+
+

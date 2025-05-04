@@ -287,89 +287,89 @@ background: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 4
 }
 .pixel-corners2,
 .pixel-corners2--wrapper {
-  clip-path: polygon(0px calc(100% - 12px),
-    6px calc(100% - 12px),
-    6px calc(100% - 6px),
-    12px calc(100% - 6px),
-    12px 100%,
-    calc(100% - 12px) 100%,
-    calc(100% - 12px) calc(100% - 6px),
-    calc(100% - 6px) calc(100% - 6px),
-    calc(100% - 6px) calc(100% - 12px),
-    100% calc(100% - 12px),
-    100% 12px,
-    calc(100% - 6px) 12px,
-    calc(100% - 6px) 6px,
-    calc(100% - 12px) 6px,
-    calc(100% - 12px) 0px,
-    12px 0px,
-    12px 6px,
-    6px 6px,
-    6px 12px,
-    0px 12px);
+  clip-path: polygon(0px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px 100%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 8px),
+    100% calc(100% - 8px),
+    100% 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 0px,
+    8px 0px,
+    8px 4px,
+    4px 4px,
+    4px 8px,
+    0px 8px);
   position: relative;
 }
 .pixel-corners2 {
-  border: 6px solid transparent;
+  border: 4px solid transparent;
 }
 .pixel-corners2--wrapper {
   width: fit-content;
   height: fit-content;
 }
-.pixel-corners2--wrapper .pixel-corners {
+.pixel-corners2--wrapper .pixel-corners2 {
   display: block;
-  clip-path: polygon(6px 12px,
-    12px 12px,
-    12px 6px,
-    calc(100% - 12px) 6px,
-    calc(100% - 12px) 12px,
-    calc(100% - 6px) 12px,
-    calc(100% - 6px) calc(100% - 12px),
-    calc(100% - 12px) calc(100% - 12px),
-    calc(100% - 12px) calc(100% - 6px),
-    12px calc(100% - 6px),
-    12px calc(100% - 12px),
-    6px calc(100% - 12px));
+  clip-path: polygon(4px 8px,
+    8px 8px,
+    8px 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px calc(100% - 8px),
+    4px calc(100% - 8px));
 }
 .pixel-corners2::after,
 .pixel-corners2--wrapper::after {
   content: "";
   position: absolute;
-  clip-path: polygon(0px calc(100% - 12px),
-    6px calc(100% - 12px),
-    6px calc(100% - 6px),
-    12px calc(100% - 6px),
-    12px 100%,
-    calc(100% - 12px) 100%,
-    calc(100% - 12px) calc(100% - 6px),
-    calc(100% - 6px) calc(100% - 6px),
-    calc(100% - 6px) calc(100% - 12px),
-    100% calc(100% - 12px),
-    100% 12px,
-    calc(100% - 6px) 12px,
-    calc(100% - 6px) 6px,
-    calc(100% - 12px) 6px,
-    calc(100% - 12px) 0px,
-    12px 0px,
-    12px 6px,
-    6px 6px,
-    6px 12px,
-    0px 12px,
+  clip-path: polygon(0px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px 100%,
+    calc(100% - 8px) 100%,
+    calc(100% - 8px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 8px),
+    100% calc(100% - 8px),
+    100% 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 0px,
+    8px 0px,
+    8px 4px,
+    4px 4px,
+    4px 8px,
+    0px 8px,
     0px 50%,
-    6px 50%,
-    6px 12px,
-    12px 12px,
-    12px 6px,
-    calc(100% - 12px) 6px,
-    calc(100% - 12px) 12px,
-    calc(100% - 6px) 12px,
-    calc(100% - 6px) calc(100% - 12px),
-    calc(100% - 12px) calc(100% - 12px),
-    calc(100% - 12px) calc(100% - 6px),
-    12px calc(100% - 6px),
-    12px calc(100% - 12px),
-    6px calc(100% - 12px),
-    6px 50%,
+    4px 50%,
+    4px 8px,
+    8px 8px,
+    8px 4px,
+    calc(100% - 8px) 4px,
+    calc(100% - 8px) 8px,
+    calc(100% - 4px) 8px,
+    calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 4px),
+    8px calc(100% - 4px),
+    8px calc(100% - 8px),
+    4px calc(100% - 8px),
+    4px 50%,
     0px 50%);
   top: 0;
   bottom: 0;
@@ -380,7 +380,7 @@ background: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 4
   pointer-events: none;
 }
 .pixel-corners2::after {
-  margin: -6px;
+  margin: -4px;
 }
 .shape,
 .shape-wrapper {
