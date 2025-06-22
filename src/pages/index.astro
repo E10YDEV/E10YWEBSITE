@@ -1,41 +1,95 @@
 ---
-import { getCollection } from "astro:content";
-import Base from "@layouts/Base.astro";
-import Posts from "@layouts/Posts.astro";
-import Proyects from "@layouts/Proyects.astro";
-import HeartIcon from "@components/icons/HeartIcon.astro";
-import Separator from "@components/Separator.astro";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+import { getCollection } from 'astro:content';
+import Base from '@layouts/Base.astro';
+import Posts from '@layouts/Posts.astro';
+import Proyects from '@layouts/Proyects.astro';
+import HeartIcon from '@components/icons/HeartIcon.astro';
+import Separator from '@components/Separator.astro';
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<Base>
-  <div>
-  
-<div class=" flex pt-2 pb-2 sm:p-4 flex-col w-full ">
-  <div class="pt-4 md:pt-0 flex flex-row px-1 w-full text-center  items-center sm:text-left">
-    <div class="flex cbbl flex-col -mt-8 sm:mb-0 mr-6 pr-2">
-      <p class="type font-sans !text-black text-justify lg:text-xl sm:text-sm md:text-base text-xs m-2">
-       Hola soy Eloy, un apasionado del aprendizaje constante y actualmente estudio programación en 42 para fortalecer mis habilidades. Tengo experiencia en desarrollo web y contribuyo al código abierto. Aunque trabajo en I+D farmacéutico, la programación me apasiona. 
-    </div>
-    <div class="flex flex-col items-center">
-      <div class="pixel-corners dark:dark-pixel-corners m-1 relative overflow-visible flex-shrink-0 aspect-1/1 self-center">
-        <div class="animated-image lg:w-40 lg:h-40 sm:w-40 sm:h-40 md:w-40 md:h-40 h-20 w-20"></div>
-      </div>
-      <div class="relative">
-        <HeartIcon/>
-        <div class="bar self-center m-1 lg:w-40 sm:w-40 lg:h-5 md:w-40 md:h-5 h-5 w-20 pixel-corners dark:dark-pixel-corners relative text-center text-xl">
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Under Maintenance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <Separator word="Posts"/>
-  <Posts posts={posts} />
-  <Separator word="Proyectos"/>
-  <Proyects/>
-</Base>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #181818;
+        font-family: 'Press Start 2P', system-ui, sans-serif;
+        margin: 0;
+      }
+      .container {
+        background: #222;
+        padding: 2rem 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 24px #000a;
+        text-align: center;
+        border: 4px solid #00ffe7;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #00ffe7;
+        text-shadow:
+          2px 2px 0 #000,
+          0 0 8px #00ffe7;
+        letter-spacing: 2px;
+      }
+      p {
+        color: #fff;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        text-shadow: 1px 1px 0 #000;
+      }
+      button {
+        background: #00ffe7;
+        color: #181818;
+        border: 2px solid #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        font-family: 'Press Start 2P', system-ui, sans-serif;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s;
+        box-shadow: 2px 2px 0 #000;
+        text-transform: uppercase;
+      }
+      button:hover {
+        background: #fff;
+        color: #00ffe7;
+      }
+      #email {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #00ffe7;
+        display: none;
+        word-break: break-all;
+        text-shadow: 1px 1px 0 #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>UNDER MAINTENANCE</h1>
+      <button onclick="mostrarEmail()"> CONTACT</button>
+      <div id="email"></div>
+    </div>
+    <script defer>
+      function mostrarEmail() {
+        const email = ['e10ydev', '@', 'protonmail.com'].join('');
+        const emailDiv = document.getElementById('email');
+        emailDiv.textContent = email;
+        emailDiv.style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
